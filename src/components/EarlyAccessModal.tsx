@@ -46,18 +46,18 @@ const EarlyAccessModal = ({ children }: EarlyAccessModalProps) => {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
-        toast.success("Successfully joined the early access list!");
+        toast.success("thankyou for choosing rivinity, you will be given access soon");
         form.reset();
     }
 
     return (
         <Dialog>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] bg-white/[0.03] backdrop-blur-2xl border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] text-foreground overflow-hidden">
-                {/* Glass highlight glare - matching Navbar style */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
+            <DialogContent className="sm:max-w-[425px] bg-white/80 backdrop-blur-2xl border-white/40 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.3)] text-foreground overflow-hidden rounded-[2rem]">
+                {/* Pronounced Glass highlight glare */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent pointer-events-none" />
 
-                <DialogHeader className="relative z-10">
+                <DialogHeader className="relative z-10 pt-4">
                     <DialogTitle className="text-3xl font-heading font-bold text-center mb-2">
                         Get Early Access
                     </DialogTitle>
@@ -80,7 +80,7 @@ const EarlyAccessModal = ({ children }: EarlyAccessModalProps) => {
                                     <FormControl>
                                         <Input
                                             placeholder="Enter your name"
-                                            className="bg-white/[0.03] border-white/10 focus:bg-white/[0.05] focus:border-white/20 focus:ring-0 focus-visible:ring-0 transition-all h-12 rounded-xl"
+                                            className="bg-black/5 border-black/5 focus:bg-white/50 focus:border-primary/40 transition-all h-12 rounded-xl text-foreground placeholder:text-muted-foreground/40"
                                             {...field}
                                         />
                                     </FormControl>
@@ -97,7 +97,7 @@ const EarlyAccessModal = ({ children }: EarlyAccessModalProps) => {
                                     <FormControl>
                                         <Input
                                             placeholder="name@example.com"
-                                            className="bg-white/[0.03] border-white/10 focus:bg-white/[0.05] focus:border-white/20 focus:ring-0 focus-visible:ring-0 transition-all h-12 rounded-xl"
+                                            className="bg-black/5 border-black/5 focus:bg-white/50 focus:border-primary/40 transition-all h-12 rounded-xl text-foreground placeholder:text-muted-foreground/40"
                                             {...field}
                                         />
                                     </FormControl>

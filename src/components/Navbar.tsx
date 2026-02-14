@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
+import Logo from "./ui/Logo";
 import EarlyAccessModal from "./EarlyAccessModal";
 
 const navLinks = [
@@ -22,17 +23,12 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
-      <nav className="w-full max-w-[1440px] h-16 lg:h-20 rounded-full bg-white/[0.03] backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex items-center justify-between px-4 sm:px-8 relative overflow-hidden">
-        {/* Glass highlight glare */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
+      <nav className="w-full max-w-[1440px] h-16 lg:h-20 rounded-full bg-white/[0.05] backdrop-blur-3xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex items-center justify-between px-4 sm:px-8 relative overflow-hidden ring-1 ring-white/10">
+        {/* Glass highlight glare - more pronounced */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/15 via-transparent to-transparent pointer-events-none" />
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-primary to-accent shadow-md group-hover:shadow-primary/20 transition-all duration-300">
-            <span className="font-heading font-bold text-primary-foreground text-lg">R</span>
-          </div>
-          <span className="font-heading font-semibold text-lg text-primary tracking-tight uppercase hidden sm:inline-block">
-            rivinity
-          </span>
+        <a href="#" className="flex items-center group">
+          <Logo className="h-8 lg:h-10 text-foreground group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300" />
         </a>
 
         {/* Desktop Links */}

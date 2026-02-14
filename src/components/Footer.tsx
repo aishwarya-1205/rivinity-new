@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, ArrowRight, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import Logo from "./ui/Logo";
 
 interface FooterLink {
   label: string;
@@ -27,7 +28,6 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Privacy Policy", href: "#" },
   ],
 };
-
 const Footer = () => {
   return (
     <footer className="relative pb-10 pt-20 px-4 overflow-hidden">
@@ -40,13 +40,8 @@ const Footer = () => {
             {/* Column 1: Brand */}
             <div className="flex flex-col gap-8">
               <div>
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-primary to-accent shadow-md">
-                    <span className="font-heading font-bold text-primary-foreground text-xl">R</span>
-                  </div>
-                  <span className="font-heading font-semibold text-2xl text-foreground tracking-tight">
-                    Rivinity
-                  </span>
+                <div className="flex items-center mb-2">
+                  <Logo className="h-10 text-foreground" />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground/60">
                   <span>Owned by</span>

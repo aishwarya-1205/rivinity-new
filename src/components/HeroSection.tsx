@@ -22,20 +22,20 @@ const HeroSection = () => {
         {/* Gradient overlays for better text readability - Top part */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-transparent" />
 
-        {/* Centered Indian Silhouette as background */}
+        {/* Centered Indian Silhouette as background - Mobile Optimized Zoom */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2 }}
-          className="absolute inset-x-0 bottom-0 h-auto flex flex-col justify-end z-1"
+          className="absolute inset-x-0 bottom-0 h-[60vh] sm:h-auto flex flex-col justify-end z-0 overflow-hidden"
         >
           <img
             src={indiaSilhouette}
             alt="Indian architectural skyline"
-            className="w-full h-auto object-contain opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05]"
+            className="w-full h-full sm:h-auto object-cover sm:object-contain object-bottom sm:object-center opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05] scale-[1.7] sm:scale-100 origin-bottom transition-transform duration-1000"
           />
           {/* Subtle bottom fade gradient to match reference and blend with section below */}
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 sm:h-60 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
         </motion.div>
 
         {/* Bottom wash for transition */}
@@ -50,9 +50,30 @@ const HeroSection = () => {
           transition={{ delay: 0.2 }}
           className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 mb-8 mx-auto shadow-sm"
         >
-          <span className="text-xs font-medium text-muted-foreground tracking-wide">
-            🇮🇳 Powered by Bharattech
-          </span>
+          <div className="flex items-center gap-2">
+            <svg
+              viewBox="0 0 900 600"
+              className="w-4 h-[11px] rounded-[1px]"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="900" height="600" fill="#128807" />
+              <rect width="900" height="400" fill="#fff" />
+              <rect width="900" height="200" fill="#f4c430" />
+              <g transform="translate(450,300)">
+                <circle r="92.5" fill="#000080" />
+                <circle r="80" fill="#fff" />
+                <circle r="16" fill="#000080" />
+                <path
+                  d="M0-80V80M-20.7-77.3L20.7 77.3M-40-69.3L40 69.3M-56.6-56.6L56.6 56.6M-69.3-40L69.3 40M-77.3-20.7L77.3 20.7M-80 0H80M-77.3 20.7L77.3-20.7M-69.3 40L40-69.3M-56.6 56.6L56.6-56.6M-40 69.3L40-69.3M-20.7 77.3L20.7-77.3"
+                  stroke="#000080"
+                  strokeWidth="2"
+                />
+              </g>
+            </svg>
+            <span className="text-xs font-medium text-muted-foreground tracking-wide">
+              Powered by Bharattech
+            </span>
+          </div>
         </motion.div>
 
         {/* Headline */}
