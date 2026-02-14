@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Magnetic from "./ui/Magnetic";
+import EarlyAccessModal from "./EarlyAccessModal";
 
 const NeuralSphere = () => {
   return (
@@ -161,13 +162,15 @@ const CTASection = () => {
                 </div>
 
                 {/* Content */}
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  Get Early Access
-                  <ArrowRight
-                    size={24}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </span>
+                <EarlyAccessModal>
+                  <span className="relative z-10 flex items-center justify-center gap-3 cursor-pointer h-full w-full">
+                    Get Early Access
+                    <ArrowRight
+                      size={24}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </span>
+                </EarlyAccessModal>
 
                 {/* Internal Glow */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

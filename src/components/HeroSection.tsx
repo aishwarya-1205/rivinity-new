@@ -13,29 +13,33 @@ const logos = [
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden min-h-[90vh] bg-background">
+    <section className="relative overflow-hidden min-h-[100vh] bg-background">
       {/* 1. Background Atmosphere & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Base warm hazy gradient */}
-        <div className="absolute inset-0 warm-section opacity-70" />
+        <div className="absolute inset-0 warm-section opacity-20" />
+
+        {/* Gradient overlays for better text readability - Top part */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-transparent" />
 
         {/* Centered Indian Silhouette as background */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2 }}
-          className="absolute inset-0"
+          className="absolute inset-x-0 bottom-0 h-auto flex flex-col justify-end z-1"
         >
           <img
             src={indiaSilhouette}
             alt="Indian architectural skyline"
-            className="w-full h-full object-cover opacity-90 dark:opacity-70 filter brightness-[1.05]"
+            className="w-full h-auto object-contain opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05]"
           />
+          {/* Subtle bottom fade gradient to match reference and blend with section below */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
         </motion.div>
 
-        {/* Gradient overlays for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Bottom wash for transition */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
       </div>
 
       <div className="container-custom relative z-10 text-center pt-32 sm:pt-40 lg:pt-48 pb-16">

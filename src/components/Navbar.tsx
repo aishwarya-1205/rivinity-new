@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
+import EarlyAccessModal from "./EarlyAccessModal";
 
 const navLinks = [
   { label: "Platform", href: "#platform" },
@@ -54,10 +55,12 @@ const Navbar = () => {
             <Sun size={19} />
           </div>
 
-          <a href="#login" className="flex items-center gap-2 bg-foreground text-background px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-md active:scale-95 group">
-            Login
-            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-          </a>
+          <EarlyAccessModal>
+            <div className="flex items-center gap-2 bg-foreground text-background px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-md active:scale-95 group cursor-pointer">
+              Get Early Access
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </EarlyAccessModal>
 
           {/* Mobile Toggle */}
           <button
