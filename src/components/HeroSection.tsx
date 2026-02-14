@@ -19,24 +19,23 @@ const HeroSection = () => {
         {/* Base warm hazy gradient */}
         <div className="absolute inset-0 warm-section opacity-70" />
 
-        {/* Top-aligned Indian Silhouette (Shifted to touch top boundary) */}
+        {/* Centered Indian Silhouette as background */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2 }}
-          className="relative w-full"
+          className="absolute inset-0"
         >
           <img
             src={indiaSilhouette}
             alt="Indian architectural skyline"
-            className="w-full h-auto opacity-100 dark:opacity-80 filter brightness-[1.05]"
+            className="w-full h-full object-cover opacity-90 dark:opacity-70 filter brightness-[1.05]"
           />
-          {/* Subtle bottom fade to transition into content area - NOT cutting in middle */}
-          <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background to-transparent z-10" />
         </motion.div>
 
-        {/* Global atmospheric glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+        {/* Gradient overlays for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
       <div className="container-custom relative z-10 text-center pt-32 sm:pt-40 lg:pt-48 pb-16">
