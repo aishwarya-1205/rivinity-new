@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/logo.png";
 import EarlyAccessModal from "./EarlyAccessModal";
 
 const navLinks = [
