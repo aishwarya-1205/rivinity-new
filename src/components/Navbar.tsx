@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
-import Logo from "../assets/Logo.png"
+import Logo from "../assets/Logo.png";
 import EarlyAccessModal from "./EarlyAccessModal";
-
 
 const navLinks = [
   { label: "Platform", href: "#platform" },
@@ -25,14 +24,13 @@ const Navbar = () => {
       className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
       <nav className="w-full max-w-[1440px] h-16 lg:h-20 rounded-full bg-white/[0.05] backdrop-blur-3xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex items-center justify-between px-4 sm:px-8 relative overflow-hidden ring-1 ring-white/10">
-
         <div className="absolute inset-0 bg-gradient-to-tr from-white/15 via-transparent to-transparent pointer-events-none" />
         {/* Logo */}
         <a href="#" className="flex items-center group">
           <img
             src={Logo}
             alt="Logo"
-            className="h-12 lg:h-16 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
+            className="h-14 lg:h-16 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
           />
         </a>
 

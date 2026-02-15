@@ -7,7 +7,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-import Logo from "../assets/Logo.svg";
+import Logo from "../assets/Logo.png";
 
 interface FooterLink {
   label: string;
