@@ -30,7 +30,7 @@ const Navbar = () => {
           <img
             src={Logo}
             alt="Logo"
-            className="h-18 lg:h-20 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
+            className="h-20 lg:h-24 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
           />
         </a>
 
