@@ -116,15 +116,16 @@ const CTASection = () => {
             </div>
           </motion.div>
 
-          {/* Headline - Word by Word with Line Breaks */}
           <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6 sm:mb-8 tracking-tighter leading-[1.1] sm:leading-[0.95]">
             <div className="flex flex-col gap-1 sm:gap-2">
               <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-4 md:gap-x-6">
-                {["Build", "the", "future", "of", "India's", "AI"].map((word, i) => (
-                  <motion.span key={`line1-${i}`} variants={wordVariants}>
-                    {word}
-                  </motion.span>
-                ))}
+                {["Build", "the", "future", "of", "India's", "AI"].map(
+                  (word, i) => (
+                    <motion.span key={`line1-${i}`} variants={wordVariants}>
+                      {word}
+                    </motion.span>
+                  ),
+                )}
               </div>
               <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-6">
                 {["with", "Rivinity."].map((word, i) => (
@@ -148,12 +149,16 @@ const CTASection = () => {
             variants={wordVariants}
             className="text-base sm:text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 sm:mb-16 leading-relaxed px-4"
           >
-            Join India's most ambitious institutions building on sovereign, <br className="hidden md:block" />
+            Join India's most ambitious institutions building on sovereign,{" "}
+            <br className="hidden md:block" />
             governed AI infrastructure.
           </motion.p>
 
           {/* Magnetic Glow Button */}
-          <motion.div variants={wordVariants} className="w-full max-w-[280px] sm:max-w-none">
+          <motion.div
+            variants={wordVariants}
+            className="w-full max-w-[280px] sm:max-w-none"
+          >
             <Magnetic strength={0.4} radius={250}>
               <button className="group relative w-full sm:w-64 h-14 sm:h-20 rounded-full bg-foreground text-background font-heading font-bold text-base sm:text-xl overflow-hidden transition-all duration-500 hover:scale-105 sm:hover:scale-110 hover:shadow-[0_0_80px_-20px_rgba(var(--primary-rgb),0.5)]">
                 {/* Gradient Border */}

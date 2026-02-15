@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
-import Logo from "./ui/Logo";
+import {
+  Mail,
+  ArrowRight,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import Logo from "../assets/Logo.svg";
 
 interface FooterLink {
   label: string;
@@ -33,15 +40,13 @@ const Footer = () => {
     <footer className="relative pb-10 pt-20 px-4 overflow-hidden">
       <div className="container-custom">
         <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-14 shadow-2xl relative overflow-hidden group">
-          {/* Subtle background glow */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-primary/10 transition-colors duration-700" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 relative z-10">
-            {/* Column 1: Brand */}
             <div className="flex flex-col gap-8">
               <div>
                 <div className="flex items-center mb-2">
-                  <Logo className="h-10 text-foreground" />
+                  <img src={Logo} alt="Logo" className="h-10" />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground/60">
                   <span>Owned by</span>
@@ -56,7 +61,10 @@ const Footer = () => {
                 <p className="text-sm font-bold text-foreground mb-3 tracking-wide uppercase opacity-80">
                   Support Inquiries:
                 </p>
-                <a href="mailto:support@rivinity.ai" className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors group/mail">
+                <a
+                  href="mailto:support@rivinity.ai"
+                  className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors group/mail"
+                >
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/mail:bg-primary/10 transition-colors">
                     <Mail size={14} />
                   </div>
@@ -65,7 +73,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Link Columns */}
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category}>
                 <h4 className="font-heading font-bold text-foreground text-sm tracking-widest uppercase mb-6 opacity-90">
@@ -78,15 +85,15 @@ const Footer = () => {
                         href={link.href}
                         className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300 flex items-center group/link"
                       >
-                        <span className="hover:translate-x-1 transition-transform">{link.label}</span>
+                        <span className="hover:translate-x-1 transition-transform">
+                          {link.label}
+                        </span>
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
-
-            {/* Column 4: Newsletter */}
             <div className="flex flex-col gap-6">
               <div>
                 <h4 className="font-heading font-bold text-foreground text-sm tracking-widest uppercase mb-2 opacity-90">
@@ -107,13 +114,20 @@ const Footer = () => {
                 </div>
                 <button className="flex items-center justify-between w-full bg-foreground text-background px-6 py-3.5 rounded-full text-sm font-bold hover:bg-foreground/90 transition-all active:scale-[0.98] group">
                   Signup Now
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight
+                    size={18}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
               </div>
 
               <div className="flex items-center gap-5 pt-2">
                 {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                  <a key={i} href="#" className="text-muted-foreground hover:text-foreground transition-colors p-1 hover:scale-110 transition-transform">
+                  <a
+                    key={i}
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors p-1 hover:scale-110 transition-transform"
+                  >
                     <Icon size={18} strokeWidth={1.5} />
                   </a>
                 ))}

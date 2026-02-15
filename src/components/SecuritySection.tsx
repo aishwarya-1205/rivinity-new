@@ -2,10 +2,26 @@ import { motion } from "framer-motion";
 import { Shield, Lock, Eye, Server } from "lucide-react";
 
 const badges = [
-  { icon: Shield, title: "Governance-First", description: "Accountability embedded at the system level" },
-  { icon: Lock, title: "Data Sovereignty", description: "Your data never leaves your control" },
-  { icon: Eye, title: "Full Traceability", description: "Complete audit trail for every interaction" },
-  { icon: Server, title: "Institutional Grade", description: "Built for regulated and government environments" },
+  {
+    icon: Shield,
+    title: "Governance-First",
+    description: "Accountability embedded at the system level",
+  },
+  {
+    icon: Lock,
+    title: "Data Sovereignty",
+    description: "Your data never leaves your control",
+  },
+  {
+    icon: Eye,
+    title: "Full Traceability",
+    description: "Complete audit trail for every interaction",
+  },
+  {
+    icon: Server,
+    title: "Institutional Grade",
+    description: "Built for regulated and government environments",
+  },
 ];
 
 const environments = [
@@ -32,8 +48,8 @@ const SecuritySection = () => {
             <span className="gradient-text">built from day one</span>
           </h2>
           <p className="max-w-xl mx-auto text-muted-foreground">
-            Privacy isn't a feature — it's the architecture. Every layer is designed
-            for institutional accountability and compliance.
+            Privacy isn't a feature — it's the architecture. Every layer is
+            designed for institutional accountability and compliance.
           </p>
         </motion.div>
 
@@ -54,12 +70,13 @@ const SecuritySection = () => {
               <h3 className="font-heading font-semibold text-foreground text-sm mb-1.5">
                 {badge.title}
               </h3>
-              <p className="text-xs text-muted-foreground">{badge.description}</p>
+              <p className="text-xs text-muted-foreground">
+                {badge.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Built for section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
