@@ -6,8 +6,15 @@ import {
   Facebook,
   Linkedin,
   Twitter,
+  LucideIcon,
 } from "lucide-react";
 import Logo from "../assets/Rivinity.png";
+import EarlyAccessModal from "./EarlyAccessModal";
+
+type SocialLink = {
+  icon: LucideIcon;
+  url: string;
+};
 
 interface FooterLink {
   label: string;
@@ -35,6 +42,22 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Privacy Policy", href: "#" },
   ],
 };
+
+const socialLinks: SocialLink[] = [
+  {
+    icon: Linkedin,
+    url: "https://www.linkedin.com/company/bharatartificialintelligence/",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/rivinityai/",
+  },
+  {
+    icon: Twitter,
+    url: "https://x.com/rivinityai",
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="relative pb-10 pt-20 px-4 overflow-hidden">
@@ -49,7 +72,7 @@ const Footer = () => {
                   <img src={Logo} alt="Logo" className="h-20" />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground/60">
-                  <span>Owned by</span>
+                  <span>A product by</span>
                   <div className="flex items-center gap-1.5 grayscale opacity-70">
                     <div className="w-4 h-4 rounded-sm bg-orange-500" />
                     <span className="font-bold tracking-tight">BharatTech</span>
@@ -112,20 +135,24 @@ const Footer = () => {
                     className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all placeholder:text-muted-foreground/40"
                   />
                 </div>
-                <button className="flex items-center justify-between w-full bg-foreground text-background px-6 py-3.5 rounded-full text-sm font-bold hover:bg-foreground/90 transition-all active:scale-[0.98] group">
-                  Signup Now
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </button>
+                <EarlyAccessModal>
+                  <button className="flex items-center justify-between w-full bg-foreground text-background px-6 py-3.5 rounded-full text-sm font-bold hover:bg-foreground/90 transition-all active:scale-[0.98] group">
+                    Signup Now
+                    <ArrowRight
+                      size={18}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </button>
+                </EarlyAccessModal>
               </div>
 
               <div className="flex items-center gap-5 pt-2">
-                {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+                {socialLinks.map(({ icon: Icon, url }, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors p-1 hover:scale-110 transition-transform"
                   >
                     <Icon size={18} strokeWidth={1.5} />
