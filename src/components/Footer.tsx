@@ -7,7 +7,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Rivinity.png";
 
 interface FooterLink {
   label: string;
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="flex flex-col gap-8">
               <div>
                 <div className="flex items-center mb-2">
-                  <img src={Logo} alt="Logo" className="h-10" />
+                  <img src={Logo} alt="Logo" className="h-20" />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground/60">
                   <span>Owned by</span>

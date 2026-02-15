@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Rivinity.png";
 import EarlyAccessModal from "./EarlyAccessModal";
 
 const navLinks = [
@@ -30,7 +30,7 @@ const Navbar = () => {
           <img
             src={Logo}
             alt="Logo"
-            className="h-14 lg:h-16 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
+            className="h-18 lg:h-20 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
           />
         </a>
 
