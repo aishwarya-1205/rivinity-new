@@ -64,13 +64,7 @@ const Navbar = () => {
             </div>
           </EarlyAccessModal>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-foreground p-2 rounded-full hover:bg-white/5 transition-all"
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+
         </div>
 
         {/* Mobile Menu */}
@@ -103,7 +97,7 @@ const Navbar = () => {
                 </div>
                 <a
                   href="#login"
-                  className="btn-primary !py-3.5 text-base text-center mt-2 flex justify-center gap-2"
+                  className="btn-primary !py-3.5 text-base text-center mt-1 flex justify-center gap-1"
                 >
                   Login
                   <ArrowRight size={18} />

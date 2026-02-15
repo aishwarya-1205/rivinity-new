@@ -2,27 +2,19 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import indiaSilhouette from "@/assets/india-silhouette.png";
 
-const logos = [
-  "Government of India",
-  "DRDO",
-  "ISRO",
-  "Infosys",
-  "TCS",
-  "Wipro",
-];
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden min-h-[100vh] bg-background">
-      {/* 1. Background Atmosphere & Silhouette */}
+      {/* 1. Background & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Base warm hazy gradient */}
         <div className="absolute inset-0 warm-section opacity-20" />
 
-        {/* Gradient overlays for better text readability - Top part */}
+        {/* Gradient Top part */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-transparent" />
 
-        {/* Centered Indian Silhouette as background - Mobile Optimized Zoom */}
+        {/* Mobile Zoom */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -34,11 +26,10 @@ const HeroSection = () => {
             alt="Indian architectural skyline"
             className="w-full h-full sm:h-auto object-cover sm:object-contain object-bottom sm:object-center opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05] scale-[1.7] sm:scale-100 origin-bottom transition-transform duration-1000"
           />
-          {/* Subtle bottom fade gradient to match reference and blend with section below */}
           <div className="absolute inset-x-0 bottom-0 h-40 sm:h-60 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
         </motion.div>
 
-        {/* Bottom wash for transition */}
+        {/* Bottom transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
       </div>
 
@@ -111,22 +102,24 @@ const HeroSection = () => {
           </a>
         </motion.div>
 
-        {/* Logo Cloud */}
+        {/* Marquee Section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="mb-0"
+          className="relative mt-8 py-10 border-y border-border/50 overflow-hidden"
         >
-          <p className="text-xs text-muted-foreground mb-5 uppercase tracking-widest">
-            Built for India's leading institutions
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-60">
-            {logos.map((logo) => (
-              <span key={logo} className="text-sm font-heading font-semibold text-foreground whitespace-nowrap">
-                {logo}
-              </span>
-            ))}
+          <div className="marquee-wrapper">
+            <div className="flex animate-marquee gap-12 sm:gap-24">
+              {[...Array(6)].map((_, i) => (
+                <span
+                  key={i}
+                  className="text-2xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground/40 dark:text-foreground/20 uppercase tracking-tighter whitespace-nowrap transition-colors hover:text-foreground/60"
+                >
+                  Built for India's leading institutions
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
