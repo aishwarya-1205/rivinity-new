@@ -6,6 +6,8 @@ import SolutionsSection from "@/components/SolutionsSection";
 import SecuritySection from "@/components/SecuritySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ServicesPreviewSection from "@/components/ServicesPreviewSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 
 const Index = () => {
   return (
@@ -15,7 +17,9 @@ const Index = () => {
       <ProductShowcase />
       <IndianLLM />
       <SolutionsSection />
+      <ServicesPreviewSection />
       <SecuritySection />
+      <BlogPreviewSection />
       <CTASection />
       <Footer />
     </div>

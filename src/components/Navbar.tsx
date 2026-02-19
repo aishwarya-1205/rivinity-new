@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X, Sun, LogIn, ArrowRight } from "lucide-react";
 import Logo from "../assets/Rivinity.png";
 import EarlyAccessModal from "./EarlyAccessModal";
 
 const navLinks = [
-  { label: "Platform", href: "#platform" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Developers", href: "#developers" },
-  { label: "Learn", href: "#learn" },
-  { label: "Research", href: "#research" },
-  { label: "About", href: "#about" },
+  { label: "Platform", href: "/#platform" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/blog" },
+  { label: "Developers", href: "/#developers" },
+  { label: "Research", href: "/#research" },
 ];
 
 const Navbar = () => {
@@ -26,25 +27,36 @@ const Navbar = () => {
       <nav className="w-full max-w-[1440px] h-16 lg:h-20 rounded-full bg-white/[0.05] backdrop-blur-3xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex items-center justify-between px-4 sm:px-8 relative overflow-hidden ring-1 ring-white/10">
         <div className="absolute inset-0 bg-gradient-to-tr from-white/15 via-transparent to-transparent pointer-events-none" />
         {/* Logo */}
-        <a href="#" className="flex items-center group">
+        <Link to="/" className="flex items-center group">
           <img
             src={Logo}
             alt="Logo"
             className="h-20 lg:h-24 group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-300"
           />
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-            </a>
+            link.href.startsWith("/#") ? (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                to={link.href} // Link uses 'to' prop
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </Link>
+            )
           ))}
         </div>
 
@@ -78,14 +90,25 @@ const Navbar = () => {
             >
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-white/5 last:border-0 transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  link.href.startsWith("/#") ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-white/5 last:border-0 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-white/5 last:border-0 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
                 <div className="flex items-center justify-between pt-4 mt-2 border-t border-white/5">
                   <span className="text-sm text-muted-foreground">

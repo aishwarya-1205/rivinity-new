@@ -19,12 +19,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2 }}
-          className="absolute inset-x-0 bottom-0 h-[60vh] sm:h-auto flex flex-col justify-end z-0 overflow-hidden"
+          className="absolute inset-x-0 bottom-0 h-[60vh] sm:h-full flex flex-col justify-end z-0 overflow-hidden"
         >
           <img
             src={indiaSilhouette}
             alt="Indian architectural skyline"
-            className="w-full h-full sm:h-auto object-cover sm:object-contain object-bottom sm:object-center opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05] scale-[1.7] sm:scale-100 origin-bottom transition-transform duration-1000"
+            className="w-full h-full object-cover object-bottom opacity-70 dark:opacity-60 filter brightness-[1.02] contrast-[1.05] scale-[1.7] sm:scale-100 origin-bottom transition-transform duration-1000"
           />
           <div className="absolute inset-x-0 bottom-0 h-40 sm:h-60 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
         </motion.div>
@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
       </div>
 
-      <div className="container-custom relative z-10 text-center pt-32 sm:pt-40 lg:pt-48 pb-16">
+      <div className="container-custom relative z-10 text-center pt-32 sm:pt-32 md:pt-40 lg:pt-48 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="font-heading text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground mb-6"
+          className="font-heading text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-foreground mb-6"
         >
           AI for all, from India
         </motion.h1>
@@ -110,7 +110,7 @@ const HeroSection = () => {
           className="relative mt-8 py-10 border-y border-border/50 overflow-hidden"
         >
           <div className="marquee-wrapper">
-            <div className="flex animate-marquee gap-12 sm:gap-24">
+            <div className="flex animate-marquee gap-12 sm:gap-16 md:gap-24">
               {[...Array(6)].map((_, i) => (
                 <span
                   key={i}
