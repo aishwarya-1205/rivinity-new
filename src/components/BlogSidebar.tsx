@@ -2,7 +2,6 @@ import React from "react";
 import { Search, ChevronRight, Tag, Calendar, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Mock data for the sidebar
 const categories = [
     { name: "AI Strategy", count: 12 },
     { name: "Machine Learning", count: 8 },
@@ -53,7 +52,6 @@ const BlogSidebar = () => {
                 </div>
             </div>
 
-            {/* Categories Widget */}
             <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                 <h3 className="font-bold text-lg mb-4">Categories</h3>
                 <div className="space-y-2">
@@ -77,7 +75,6 @@ const BlogSidebar = () => {
                 </div>
             </div>
 
-            {/* Recent Posts Widget */}
             <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                 <h3 className="font-bold text-lg mb-4">Recent Posts</h3>
                 <div className="space-y-4">
@@ -103,7 +100,6 @@ const BlogSidebar = () => {
                 </div>
             </div>
 
-            {/* Tags Widget */}
             <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                 <h3 className="font-bold text-lg mb-4">Popular Tags</h3>
                 <div className="flex flex-wrap gap-2">
@@ -119,7 +115,6 @@ const BlogSidebar = () => {
                 </div>
             </div>
 
-            {/* Newsletter/Ad Space */}
             <div className="relative overflow-hidden rounded-2xl p-6 text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/80 opacity-90 z-0" />
                 <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="bg" className="absolute inset-0 w-full h-full object-cover -z-10 mix-blend-overlay opacity-50" />

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Mock data (subset of Blog.tsx)
 const blogPosts = [
     {
         id: 1,

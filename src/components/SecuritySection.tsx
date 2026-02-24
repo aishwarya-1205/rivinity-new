@@ -45,7 +45,7 @@ const SecuritySection = () => {
           <span className="section-label">Security</span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Enterprise-grade security,{" "}
-            <span className="gradient-text">built from day one</span>
+            <span className="gradient-text text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-[#ec4899]">built from day one</span>
           </h2>
           <p className="max-w-xl mx-auto text-muted-foreground">
             Privacy isn't a feature — it's the architecture. Every layer is

@@ -34,6 +34,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Governance", href: "#" },
     { label: "Deepfake Detection", href: "#" },
     { label: "Compliance", href: "#" },
+    { label: "Post Your Ad", href: "/advertise" },
   ],
   "Other Links": [
     { label: "Documentation", href: "#" },

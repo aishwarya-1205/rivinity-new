@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogSidebar from "@/components/BlogSidebar";
+import BlogMobileFilters from "@/components/BlogMobileFilters";
 
 const blogPosts = [
     {
@@ -107,6 +108,7 @@ const Blog = () => {
 
                     {/* Blog Posts Grid - Right Side */}
                     <div className="lg:col-span-3">
+                        <BlogMobileFilters />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {blogPosts.map((post, index) => (
                                 <motion.div

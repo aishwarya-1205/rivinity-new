@@ -132,7 +132,7 @@ const IndianLLM = () => {
 
         <div className="mt-20 relative rounded-3xl overflow-hidden p-[1px] bg-gradient-to-r from-orange-400 via-white to-green-500 shadow-xl">
           <div className="absolute inset-0 bg-white/20 blur-xl"></div>
-          <div className="relative bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 text-center overflow-hidden min-h-[300px] flex flex-col items-center justify-center">
+          <div className="relative bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 text-center overflow-hidden min-h-[300px] flex flex-col items-center justify-center">
             <LanguageReadout languages={languages} />
 
             <div className="flex justify-center gap-4 flex-wrap mt-8">
@@ -185,7 +185,7 @@ const LanguageReadout = ({
   };
 
   return (
-    <div className="mb-0 h-40 flex flex-col items-center justify-center relative w-full">
+    <div className="mb-0 h-48 sm:h-56 md:h-64 flex flex-col items-center justify-center relative w-full overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -193,17 +193,17 @@ const LanguageReadout = ({
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-x-0"
+          className="w-full text-center px-4 py-8"
         >
-          <div className="inline-block relative">
-            <h3 className="text-4xl sm:text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 dark:from-slate-800 dark:to-slate-700 opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm select-none whitespace-nowrap">
+          <div className="flex flex-col items-center justify-center relative max-w-full mx-auto overflow-visible">
+            <h3 className="text-2xl sm:text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 dark:from-slate-800 dark:to-slate-700 opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm select-none whitespace-nowrap leading-relaxed py-4">
               {currentLang.script}
             </h3>
-            <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500 animate-shimmer bg-[length:200%_auto] relative z-10 whitespace-nowrap">
+            <h3 className="text-xl sm:text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500 animate-shimmer bg-[length:200%_auto] relative z-10 whitespace-nowrap leading-relaxed py-4">
               {currentLang.script}
             </h3>
           </div>
-          <p className="mt-4 text-slate-500 dark:text-slate-400 font-mono text-sm tracking-widest uppercase">
+          <p className="mt-2 text-slate-500 dark:text-slate-400 font-mono text-[9px] xs:text-[11px] sm:text-sm tracking-widest uppercase whitespace-nowrap overflow-hidden text-ellipsis">
             {currentMeta.lang} • {currentMeta.trans} • {currentMeta.eng}
           </p>
         </motion.div>

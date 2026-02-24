@@ -150,8 +150,8 @@ const SolutionsSection = () => {
           <h2 className="font-heading text-3xl sm:text-5xl lg:text-7xl font-bold text-foreground max-w-4xl mx-auto leading-[1.2] lg:leading-[1.1] tracking-tight">
             How Our AI Brings{" "}
             <GradientText
-              colors={["#f97316", "#fb923c", "#f97316"]}
-              className="italic font-light pr-4"
+              colors={["#f97316", "#ec4899", "#d14088ff"]}
+              className="italic font-light-bold pr-4"
             >
               Your
             </GradientText>{" "}
@@ -169,17 +169,15 @@ const SolutionsSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 sm:px-8 sm:py-4 rounded-full text-xs sm:text-sm font-bold tracking-tight transition-all duration-300 border ${
-                activeTab === tab.id
-                  ? "bg-white text-foreground border-white shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] scale-105 z-20"
-                  : "bg-white/20 backdrop-blur-xl text-foreground/60 border-white/20 hover:bg-white/40 z-10"
-              }`}
+              className={`px-6 py-3 sm:px-8 sm:py-4 rounded-full text-xs sm:text-sm font-bold tracking-tight transition-all duration-300 border ${activeTab === tab.id
+                ? "bg-white text-foreground border-white shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] scale-105 z-20"
+                : "bg-white/20 backdrop-blur-xl text-foreground/60 border-white/20 hover:bg-white/40 z-10"
+                }`}
             >
               <span className="flex items-center gap-2 sm:gap-3">
                 <span
-                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[9px] sm:text-[10px] shrink-0 ${
-                    activeTab === tab.id ? "bg-black/5" : "bg-black/5"
-                  }`}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[9px] sm:text-[10px] shrink-0 ${activeTab === tab.id ? "bg-black/5" : "bg-black/5"
+                    }`}
                 >
                   {i + 1}.
                 </span>
