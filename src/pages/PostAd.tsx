@@ -124,10 +124,11 @@ const PostAd = () => {
                         onClick={() =>
                           setFormData({ ...formData, objective: obj })
                         }
-                        className={`px-4 py-3 rounded-2xl border text-xs font-bold transition-all ${formData.objective === obj
-                          ? "bg-primary text-white border-primary shadow-lg shadow-primary/25"
-                          : "bg-white/5 border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20"
-                          }`}
+                        className={`px-4 py-3 rounded-2xl border text-xs font-bold transition-all ${
+                          formData.objective === obj
+                            ? "bg-primary text-white border-primary shadow-lg shadow-primary/25"
+                            : "bg-white/5 border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20"
+                        }`}
                       >
                         {obj}
                       </button>

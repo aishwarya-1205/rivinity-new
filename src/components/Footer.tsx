@@ -39,8 +39,8 @@ const footerLinks: Record<string, FooterLink[]> = {
   "Other Links": [
     { label: "Documentation", href: "#" },
     { label: "API Status", href: "#" },
-    { label: "Terms & Conditions", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
   ],
 };
 

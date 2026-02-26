@@ -38,7 +38,7 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.href.startsWith("/#") ? (
               <a
                 key={link.label}
@@ -51,14 +51,14 @@ const Navbar = () => {
             ) : (
               <Link
                 key={link.label}
-                to={link.href} // Link uses 'to' prop
+                to={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
-            )
-          ))}
+            ),
+          )}
         </div>
 
         {/* Desktop Actions */}
@@ -76,8 +76,6 @@ const Navbar = () => {
               />
             </div>
           </EarlyAccessModal>
-
-
         </div>
 
         {/* Mobile Menu */}
@@ -90,7 +88,7 @@ const Navbar = () => {
               className="absolute top-[calc(100%+12px)] left-0 right-0 lg:hidden bg-card/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden z-50 p-6"
             >
               <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
+                {navLinks.map((link) =>
                   link.href.startsWith("/#") ? (
                     <a
                       key={link.label}
@@ -109,8 +107,8 @@ const Navbar = () => {
                     >
                       {link.label}
                     </Link>
-                  )
-                ))}
+                  ),
+                )}
                 <div className="flex items-center justify-between pt-4 mt-2 border-t border-white/5">
                   <span className="text-sm text-muted-foreground">
                     Dark Mode

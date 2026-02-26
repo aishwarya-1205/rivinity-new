@@ -10,7 +10,8 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import PostAd from "./pages/PostAd";
 import About from "./pages/About";
-
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/advertise" element={<PostAd />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsConditions />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
